@@ -1,0 +1,5 @@
+# Javascript API Caller
+
+## Introduction
+
+Just a simple Web Application to examine API calls using native javascript.
