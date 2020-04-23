@@ -9,8 +9,3 @@ class ApiCallApplication {
 }
 
 let application = new ApiCallApplication();
-
-document.querySelector("#submit").onclick = function(event) {
-    event.preventDefault();
-
-}
