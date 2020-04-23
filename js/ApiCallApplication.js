@@ -3,6 +3,8 @@ class ApiCallApplication {
     constructor() {
         console.log("Application initialized");
     }
+
+
 }
 
 let application = new ApiCallApplication();
