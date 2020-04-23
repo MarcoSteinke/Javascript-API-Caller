@@ -6,5 +6,3 @@ class ApiCallApplication {
         this.apiRequestService = new APIRequestService();
     }
 }
-
-let application = new ApiCallApplication();
