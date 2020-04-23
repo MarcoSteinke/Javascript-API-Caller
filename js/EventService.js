@@ -2,6 +2,7 @@ class EventService {
 
     constructor() {
         this.registerEvents();
+        console.log("EventService initialized");
     }
 
     registerEvents() {
