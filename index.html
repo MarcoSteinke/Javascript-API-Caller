@@ -27,17 +27,24 @@
         <form method="get" id="main-form">
             <div class="form-group">
                 <label for="my-input">API url</label>
-                <input id="my-input" class="form-control" type="text" name="url">
+                <input id="my-input" class="form-control" type="text" minlength="1" name="url">
             </div>
             <div class="form-group">
                 <label for="my-parameters">Parameters</label>
                 <input id="my-parameters" class="form-control" type="text" name="parameters">
             </div>
             <div class="form-group">
-                <button type="submit" class="btn btn-primary">request</button>
+                <button id="submit" type="submit" class="btn btn-primary">request</button>
             </div>
         </form>
     </div>
 </body>
+<script>
+    let apiCallApplication = new ApiCallApplication();
+    document.querySelector("#submit").onclick = function(event) {
+        event.preventDefault();
+
+    }
+</script>
 
 </html>
