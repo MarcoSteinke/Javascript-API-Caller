@@ -2,14 +2,20 @@ class APIRequestService {
 
     constructor() {
         console.log("APIRequestService initialized");
-        this.textarea = document.querySelector("#api-response");
     }
+}
 
-    requestAPI(url, params) {
-        fetch(url)
-            .then(result => result.json())
-            .then(data => {
-                this.textarea.innerHTML = JSON.stringify(data);
-            });
+function requestAPI(url, params) {
+
+    let textarea = document.querySelector("#api-response");
+
+    fetch(url)
+        .then(result => result.json())
+        .then(data => {
+            textarea.innerHTML = JSON.stringify(data);
+        });
+
+    if (textarea.innerHTML.length == 0) {
+        textarea.innerHTML = "The API request on " + url + " did not work."
     }
 }

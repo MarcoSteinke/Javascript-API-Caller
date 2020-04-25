@@ -2,17 +2,20 @@ class EventService {
 
     constructor(apiRequestService) {
         this.apiRequestService = apiRequestService;
-        this.registerEvents();
-        this.url = document.querySelector("#my-input").value;
-        console.log("EventService initialized");
-    }
+        console.log(this.apiRequestService);
 
-    registerEvents() {
-
-        // form submit
         document.querySelector("#submit").onclick = function(event) {
             event.preventDefault();
-            this.apiRequestService.requestAPI(this.url);
+            submitForm(this.apiRequestService);
         }
+
+        console.log("EventService initialized");
     }
+}
+
+function submitForm(apiRequestService) {
+
+    let url = document.querySelector("#my-input").value;
+    console.log(url);
+    requestAPI(url);
 }
