@@ -55,12 +55,20 @@
                     </div>
                 </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="parameters">
                 <div>Parameters</div>
-                <div class="input-group">
-                    <input class="form-control" type="text" name="" placeholder="Recipient's text" aria-label="Recipient's " aria-describedby="my-addon">
-                    <div class="input-group-append add-param-button">
-                        <span class="input-group-text"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                <br>
+                <div class="row parameter-row">
+                    <div class="col">
+                        <input class="form-control" type="text" id="name0" name="name0" placeholder="enter name">
+                    </div>
+                    <div class="col">
+                        <div class="input-group">
+                            <input class="form-control" type="text" name="parameter0" placeholder="enter value">
+                            <div class="input-group-append add-param-button">
+                                <span class="input-group-text"><i class="fa fa-plus" aria-hidden="true"></i></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -79,6 +87,27 @@
 <script src="js/ApiCallApplication.js"></script>
 <script>
     let apiCallApplication = new ApiCallApplication();
+
+    $(".add-param-button").click(function() {
+        let parameterCount = document.getElementsByClassName("parameter-row").length;
+        console.log(parameterCount);
+
+        document.querySelector("#parameters").insertAdjacentHTML("afterend",
+            "\
+            <div class=\"row parameter-row\">\
+                    <div class=\"col\">\
+                        <input class=\"form-control\" type=\"text\" id=\"name0\" name=\"name0\" placeholder=\"enter name\">\
+                    </div>\
+                    <div class=\"col\">\
+                        <div class=\"input-group\">\
+                            <input class=\"form-control\" type=\"text\" name=\"parameter0\" placeholder=\"enter value\">\
+                            \
+                        </div>\
+                    </div>\
+                </div>\
+            "
+        )
+    });
 </script>
 <script>
     AOS.init();
