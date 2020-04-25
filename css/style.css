@@ -30,6 +30,10 @@ body {
     background-position: top;
 }
 
+#submit {
+    margin: 20px;
+}
+
 label,
 div {
     color: #007bff;
