@@ -17,3 +17,22 @@ span {
 span {
     color: white !important;
 }
+
+nav {
+    background: black !important;
+    border-bottom: 4px solid white;
+}
+
+body {
+    background: black;
+}
+
+label,
+div {
+    color: #007bff;
+}
+
+input {
+    background-color: black !important;
+    color: white !important;
+}
