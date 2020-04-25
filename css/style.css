@@ -9,3 +9,11 @@
 #main-form {
     margin-top: 100px;
 }
+
+span {
+    background: #007bff !important;
+}
+
+span {
+    color: white !important;
+}
