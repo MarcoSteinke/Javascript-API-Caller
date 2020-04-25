@@ -44,3 +44,8 @@ textarea {
     border: 1px solid white;
     background: black !important;
 }
+
+.add-param-button:hover {
+    filter: brightness(1.4);
+    transition-duration: 0.3s;
+}
