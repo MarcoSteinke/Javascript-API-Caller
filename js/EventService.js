@@ -15,7 +15,9 @@ class EventService {
 
 function submitForm(apiRequestService) {
 
-    let url = document.querySelector("#my-input").value;
+    let prefix = document.querySelector("#prefix").value;
+    let input = document.querySelector("#my-input").value;
+    let url = prefix + input;
     console.log(url);
     requestAPI(url);
 }
