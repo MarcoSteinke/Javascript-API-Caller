@@ -4,6 +4,7 @@
 
 #main-header {
     margin-top: 50px;
+    color: white;
 }
 
 #main-form {
@@ -25,6 +26,8 @@ nav {
 
 body {
     background: black;
+    background-image: url('https://www.tokkoro.com/picsup/3304630-line-waves-light-colorful-smoke.jpg');
+    background-position: top;
 }
 
 label,
