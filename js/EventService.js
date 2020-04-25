@@ -17,7 +17,20 @@ function submitForm(apiRequestService) {
 
     let prefix = document.querySelector("#prefix").value;
     let input = document.querySelector("#my-input").value;
-    let url = prefix + input;
+    let paramNameObjects = document.querySelectorAll('.param-name');
+    let paramValueObjects = document.querySelectorAll('.param-value');
+
+    let paramaterSuffix = "?";
+    for (let i = 0; i < paramNameObjects.length; i++) {
+
+        if (i > 0) {
+            paramaterSuffix += "&";
+        }
+
+        paramaterSuffix += paramNameObjects[i].value + "=" + paramValueObjects[i].value;
+    }
+
+    let url = prefix + input + paramaterSuffix;
     console.log(url);
     requestAPI(url);
 }
