@@ -30,7 +30,7 @@
         <form method="get" id="main-form">
             <div class="form-group">
                 <div class="row">
-                    <div class="col-2 col-md-2">
+                    <div class="col-2 col-md-2" id="prefix-wrapper">
                         <div class="form-group">
                             <label for="prefix">Prefix</label>
                             <div class="input-group">
@@ -109,6 +109,10 @@
             "
         )
     });
+
+    if(window.screen.width < 600) {
+        $("#prefix-wrapper").hide();
+    }
 </script>
 <script>
     AOS.init();
