@@ -1,7 +1,7 @@
-# Javascript API Caller
+# ᴊᴀᴠᴀꜱᴄʀɪᴘᴛ-ᴀᴘɪ-ᴄᴀʟʟᴇʀ
 
 ## Introduction
 
 Just a simple Web Application to examine API calls using native javascript.
 
-<img src="https://i.imgur.com/9Mpq4Ta.png" width="400px" height="auto">
+image::https://i.imgur.com/9Mpq4Ta.png[]
