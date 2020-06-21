@@ -4,4 +4,6 @@
 
 Just a simple Web Application to examine API calls using native javascript.
 
+https://www.bestofcode.net/Applications/api[ℹ️ try the application]
+
 image::https://i.imgur.com/9Mpq4Ta.png[]
