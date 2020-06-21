@@ -6,4 +6,21 @@ Just a simple Web Application to examine API calls using native javascript.
 
 https://www.bestofcode.net/Applications/api[ℹ️ try the application]
 
-image::https://i.imgur.com/9Mpq4Ta.png[]
+'''
+This application was deployed on my own server, but you can simply deploy it by yourself
+by following the steps:
+
+### Deployment:
+
+`(no dependencies or frameworks needed, just a webserver (e.g. nginx)`
+
+'''
+
+* 1. clone the repository
+* 2. modify the project as you want
+* 3. upload it to your webserver via SFTP or other methods
+* 4. Open the URL of your webserver in the browser and start using the tool.
+
+'''
+### Screenshot:
+image::https://i.imgur.com/9Mpq4Ta.png[width=400]
