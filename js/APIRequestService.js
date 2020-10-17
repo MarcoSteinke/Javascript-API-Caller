@@ -6,6 +6,13 @@ class APIRequestService {
     }
 }
 
+const responses = [];
+const checkBox = document.querySelector("#history");
+
+if(checkBox.checked) {
+    this.responses = JSON.parse(getCookie("responses"));
+}
+
 function requestAPI(url, params) {
 
     let textarea = document.querySelector("#api-response");
@@ -21,6 +28,7 @@ function requestAPI(url, params) {
         .then(result => result.json())
         .then(data => {
             textarea.innerHTML = JSON.stringify(data);
+            responses.push(JSON.stringify(data));
         });
 
         this.responseCount++;
@@ -30,6 +38,7 @@ function requestAPI(url, params) {
         .then(data => {
             document.getElementById("response-list").insertAdjacentHTML("afterbegin", "<textarea id=\"api-response-" + this.responseCount + "\" class=\"form-control\" name=\"response\" rows=\"10\"\></textarea>");
             document.getElementById("api-response-" + this.responseCount).innerHTML = JSON.stringify(data);
+            responses.push(JSON.stringify(data));
         });
 
         this.responseCount++;

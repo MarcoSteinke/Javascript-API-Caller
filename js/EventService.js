@@ -2,7 +2,22 @@ class EventService {
 
     constructor(apiRequestService) {
         this.apiRequestService = apiRequestService;
+        this.responses = [];
         console.log(this.apiRequestService);
+
+        let checkBox = document.querySelector("#history");
+
+        if(getCookie("allowHistory") == "1") {
+            checkBox.click();
+        }
+
+        checkBox.onchange = function() {
+            if(checkBox.checked) {
+                setCookie("allowHistory", 1, 234792374);
+            } else {
+                deleteCookie("allowHistory");
+            }
+        }
 
         document.querySelector("#submit").onclick = function(event) {
             event.preventDefault();
