@@ -1,4 +1,3 @@
-
 // This code belongs to: https://howchoo.com/javascript/how-to-manage-cookies-in-javascript
 
 function setCookie(name, value, exdays) {
@@ -11,12 +10,15 @@ function setCookie(name, value, exdays) {
 }
 
 function getCookie(name) {
-    var cookie, c;
-    cookies = document.cookie.split(';');
-    for (var i=0; i < cookies.length; i++) {
-        c = cookies[i].split('=');
-        if (c[0] == name) {
-            return c[1];
+    if (document.cookie.length > 0) {
+        c_start = document.cookie.indexOf(name + "=");
+        if (c_start != -1) {
+            c_start = c_start + name.length + 1;
+            c_end = document.cookie.indexOf(";", c_start);
+            if (c_end == -1) {
+                c_end = document.cookie.length;
+            }
+            return unescape(document.cookie.substring(c_start, c_end));
         }
     }
     return "";
