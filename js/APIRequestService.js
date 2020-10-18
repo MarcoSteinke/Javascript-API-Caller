@@ -6,12 +6,22 @@ class APIRequestService {
     }
 }
 
-const responses = [];
+let responses = [];
 const checkBox = document.querySelector("#history");
 
-if(checkBox.checked) {
-    this.responses = JSON.parse(getCookie("responses"));
-}
+window.onload = function() {
+    if(checkBox.checked) {
+        responses = JSON.parse(getCookie("responses"));
+
+        responses.forEach(response => {
+            document.getElementById("response-list").insertAdjacentHTML(
+                "afterbegin", 
+                "<textarea id=\"api-response-" + this.responseCount + "\" class=\"form-control\" name=\"response\" rows=\"10\"\></textarea>");
+    
+            document.getElementById("api-response-" + this.responseCount).innerHTML = response;
+        });      
+    }
+};
 
 function requestAPI(url, params) {
 
@@ -29,6 +39,8 @@ function requestAPI(url, params) {
         .then(data => {
             textarea.innerHTML = JSON.stringify(data);
             responses.push(JSON.stringify(data));
+
+            setCookie("responses", JSON.stringify(responses), 2147483647);
         });
 
         this.responseCount++;
@@ -39,6 +51,8 @@ function requestAPI(url, params) {
             document.getElementById("response-list").insertAdjacentHTML("afterbegin", "<textarea id=\"api-response-" + this.responseCount + "\" class=\"form-control\" name=\"response\" rows=\"10\"\></textarea>");
             document.getElementById("api-response-" + this.responseCount).innerHTML = JSON.stringify(data);
             responses.push(JSON.stringify(data));
+
+            setCookie("responses", JSON.stringify(responses), 2147483647);
         });
 
         this.responseCount++;
